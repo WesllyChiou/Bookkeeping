@@ -14,10 +14,20 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // 連接到 MongoDB
+/*
 mongoose.connect('mongodb://localhost:27017/Wesley_Test', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+*/
+// MongoDB Atlas 連接 URI
+const mongoURI = "mongodb+srv://leweivictory:<NOxXkux7mjFvXetz>@cluster0.sti8h.mongodb.net/WesleyTest?retryWrites=true&w=majority&appName=Cluster0";
+                  
+// 連接到 MongoDB Atlas
+mongoose.connect(mongoURI)
+  .then(() => console.log('MongoDB Atlas connected successfully'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 
 // 定義 Expense schema
 const expenseSchema = new mongoose.Schema({

@@ -88,7 +88,7 @@
       // 新增花費
       async addExpense() {
         try {
-          await axios.post('http://localhost:3000/expenses', {
+          await axios.post('https://bookkeeping-zcvf.onrender.com/expenses', {
             amount: this.amount,
             description: this.description,
             category: this.category,
@@ -106,7 +106,7 @@
       // 獲取今日花費統計
       async fetchDailyTotal() {
         try {
-          const response = await axios.get('http://localhost:3000/expenses/daily');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/daily');
           this.dailyTotal = response.data.dailyTotal;
         } catch (error) {
           console.error('獲取今日花費資料失敗', error);
@@ -116,7 +116,7 @@
       // 獲取今日花費清單
       async fetchDailyExpenses() {
         try {
-          const response = await axios.get('http://localhost:3000/expenses/daily-list');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/daily-list');
           if (response.data && response.data.expenses) {
             this.dailyExpenses = response.data.expenses;
           } else {
@@ -130,7 +130,7 @@
       // 獲取本月花費統計
       async fetchMonthlyTotal() {
         try {
-          const response = await axios.get('http://localhost:3000/expenses/monthly');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/monthly');
           this.monthlyTotal = response.data.monthlyTotal;
         } catch (error) {
           console.error('獲取本月花費資料失敗', error);
@@ -140,7 +140,7 @@
       // 獲取本月花費清單
       async fetchMonthlyExpenses() {
         try {
-          const response = await axios.get('http://localhost:3000/expenses/monthly-list');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/expenses/monthly-list');
           if (response.data && response.data.expenses) {
             this.monthlyExpenses = response.data.expenses;
           } else {
