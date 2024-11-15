@@ -7,8 +7,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// 允許來自指定來源的請求
+app.use(cors({
+  origin: 'https://bookkeeping-1.onrender.com'  // 只允許這個來源
+}));
 // 允許跨域請求
-app.use(cors());
+//app.use(cors());
 
 // 解析 JSON 請求
 app.use(bodyParser.json());
@@ -129,7 +133,7 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 */
-app.listen(port, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on http://0.0.0.0:${port}`);
 });
 
