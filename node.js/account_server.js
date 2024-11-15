@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 // 設定 Express 應用程式
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 // 允許跨域請求
 app.use(cors());
