@@ -9,5 +9,8 @@
     "mongoose": "^8.8.1",
     "oracledb": "^6.6.0",
     "ws": "^8.18.0"
+  },
+  "scripts": {
+    "start": "node account_server.js"
   }
 }
