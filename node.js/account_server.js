@@ -7,6 +7,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// 使用 morgan 輸出 HTTP 請求的詳細日誌
+const morgan = require('morgan');
+app.use(morgan('dev'));
+
 // 允許跨域請求
 app.use(cors({
   origin: 'https://bookkeeping-1.onrender.com', // 只允許此域名的請求
