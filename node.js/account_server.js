@@ -5,19 +5,20 @@ const bodyParser = require('body-parser');
 
 // 設定 Express 應用程式
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // 允許來自指定來源的請求
-/*app.use(cors({
-  origin: 'https://bookkeeping-1.onrender.com'  // 只允許這個來源
-}));*/
-
 app.use(cors({
-  //origin: 'https://bookkeeping-1.onrender.com',  // 允許來自這個 URL 的請求
-  origin: '*',  // 允許所有來源的請求
+  origin: 'https://bookkeeping-1.onrender.com'  // 只允許這個來源
+}));
+
+/*
+app.use(cors({
+  origin: 'https://bookkeeping-1.onrender.com',  // 允許來自這個 URL 的請求
+  //origin: '*',  // 允許所有來源的請求
   methods: ['GET', 'POST'],  // 你可以指定允許的 HTTP 方法
   allowedHeaders: ['Content-Type', 'Authorization'],  // 允許的標頭
-}));
+}));*/
 
 
 // 允許跨域請求
