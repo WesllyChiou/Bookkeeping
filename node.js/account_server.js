@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/Wesley_Test', {
 });
 */
 // MongoDB Atlas 連接 URI
-const mongoURI = "mongodb+srv://leweivictory:<NOxXkux7mjFvXetz>@cluster0.sti8h.mongodb.net/WesleyTest?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = "mongodb+srv://leweivictory:NOxXkux7mjFvXetz@cluster0.sti8h.mongodb.net/WesleyTest?retryWrites=true&w=majority&appName=Cluster0";
                   
 // 連接到 MongoDB Atlas
 mongoose.connect(mongoURI)
@@ -124,6 +124,12 @@ app.get('/expenses/daily-list', async (req, res) => {
   
 
 // 啟動伺服器
+/*
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+*/
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on http://0.0.0.0:${port}`);
+});
+
