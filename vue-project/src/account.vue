@@ -88,7 +88,7 @@
       // 新增花費
       async addExpense() {
         try {
-          await axios.post('https://https://bookkeeping-1.onrender.com/expenses', {
+          await axios.post('https://bookkeeping-1.onrender.com/expenses', {
             amount: this.amount,
             description: this.description,
             category: this.category,
@@ -98,6 +98,10 @@
           this.fetchDailyExpenses();
           this.fetchMonthlyTotal();
           this.fetchMonthlyExpenses();
+          this.amount = '';
+this.description = '';
+this.category = '飲食';
+
         } catch (error) {
           console.error('新增花費失敗', error);
         }
