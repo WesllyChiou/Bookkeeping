@@ -14,10 +14,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': {
-        target: 'https://bookkeeping-1.onrender.com', // 你的後端 API 服務
-        changeOrigin: true, // 如果你的 API 是跨域的，這會修改來源
-        rewrite: (path) => path.replace(/^\/api/, '') // 如果你想移除 `/api` 前綴
+      '/expenses': {
+        target: 'https://bookkeeping-1.onrender.com',
+        changeOrigin: true,
+        secure: false, // 若後端是 HTTPS，但沒有有效的 SSL 憑證，可以加這行
       }
     }
   }
