@@ -80,7 +80,8 @@ app.get('/expenses/daily', async (req, res) => {
 
     res.json({ dailyTotal, dailyExpenses });
   } catch (error) {
-    res.status(400).send('獲取今日花費資料失敗');
+    res.status(400).json({ message: '獲取今日花費資料失敗', error: error.message });
+
   }
 });
 
