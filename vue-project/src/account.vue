@@ -88,7 +88,7 @@
       // 新增花費
       async addExpense() {
         try {
-          await axios.post('https://bookkeeping-1.onrender.com/expenses', {
+          await axios.post('/api/expenses', {
             amount: this.amount,
             description: this.description,
             category: this.category,
@@ -110,7 +110,7 @@ this.category = '飲食';
       // 獲取今日花費統計
       async fetchDailyTotal() {
         try {
-          const response = await axios.get('https://bookkeeping-1.onrender.com/expenses/daily');
+          const response = await axios.get('/api/expenses/daily');
           this.dailyTotal = response.data.dailyTotal;
         } catch (error) {
           console.error('獲取今日花費資料失敗', error);
@@ -120,7 +120,7 @@ this.category = '飲食';
       // 獲取今日花費清單
       async fetchDailyExpenses() {
         try {
-          const response = await axios.get('https://bookkeeping-1.onrender.com/expenses/daily-list');
+          const response = await axios.get('/api/expenses/daily-list');
           if (response.data && response.data.expenses) {
             this.dailyExpenses = response.data.expenses;
           } else {
@@ -134,7 +134,7 @@ this.category = '飲食';
       // 獲取本月花費統計
       async fetchMonthlyTotal() {
         try {
-          const response = await axios.get('https://bookkeeping-1.onrender.com/expenses/monthly');
+          const response = await axios.get('/api/expenses/monthly');
           this.monthlyTotal = response.data.monthlyTotal;
         } catch (error) {
           console.error('獲取本月花費資料失敗', error);
@@ -144,7 +144,7 @@ this.category = '飲食';
       // 獲取本月花費清單
       async fetchMonthlyExpenses() {
         try {
-          const response = await axios.get('https://bookkeeping-1.onrender.com/expenses/monthly-list');
+          const response = await axios.get('/api/expenses/monthly-list');
           if (response.data && response.data.expenses) {
             this.monthlyExpenses = response.data.expenses;
           } else {
