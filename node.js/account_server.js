@@ -7,11 +7,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
-
-
 // 允許跨域請求
-app.use(cors());
+//app.use(cors());
 
 // 解析 JSON 請求
 app.use(bodyParser.json());
@@ -134,6 +131,6 @@ app.listen(port, () => {
 });
 */
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on http://0.0.0.0:${port}`);
+  console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
 
