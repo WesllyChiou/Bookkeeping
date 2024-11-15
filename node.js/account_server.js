@@ -8,10 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // 允許來自指定來源的請求
+/*
 app.use(cors({
   origin: 'https://bookkeeping-1.onrender.com'  // 只允許這個來源
 }));
-
+*/
 /*
 app.use(cors({
   origin: 'https://bookkeeping-1.onrender.com',  // 允許來自這個 URL 的請求
@@ -22,7 +23,7 @@ app.use(cors({
 
 
 // 允許跨域請求
-//app.use(cors());
+app.use(cors());
 
 // 解析 JSON 請求
 app.use(bodyParser.json());
