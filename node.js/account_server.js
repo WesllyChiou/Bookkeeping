@@ -54,11 +54,13 @@ mongoose.connect(mongoURI)
 
     // 獲取今日的花費總額和清單
     app.get('/expenses/daily', async (req, res) => {
+      console.log('路由 /expenses/daily 被訪問'); // 這行日誌確認路由是否觸發
       const today = new Date();
       const startOfDay = new Date(today.setHours(0, 0, 0, 0));
       const endOfDay = new Date(today.setHours(23, 59, 59, 999));
 
       try {
+        console.log('查詢範圍:', startOfDay, endOfDay);  // 打印查詢的時間範圍
         const dailyExpenses = await Expense.find({
           createdAt: { $gte: startOfDay, $lte: endOfDay },
         });
@@ -66,6 +68,7 @@ mongoose.connect(mongoURI)
 
         res.json({ dailyTotal, dailyExpenses });
       } catch (error) {
+        console.error('錯誤:', error);  // 打印錯誤到日誌
         res.status(400).json({ message: '獲取今日花費資料失敗', error: error.message });
       }
     });
