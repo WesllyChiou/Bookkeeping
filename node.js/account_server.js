@@ -10,6 +10,13 @@ const PORT = process.env.PORT || 3000;
 // 允許跨域請求
 //app.use(cors());
 
+app.use(cors({
+  origin: 'https://bookkeeping-1.onrender.com', // 只允許此域名的請求
+  methods: ['GET', 'POST'],  // 允許的 HTTP 方法
+  allowedHeaders: ['Content-Type', 'Authorization'],  // 允許的請求標頭
+}));
+
+
 // 解析 JSON 請求
 app.use(bodyParser.json());
 
