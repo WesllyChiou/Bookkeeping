@@ -7,6 +7,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// 這段中間件會在所有請求進來時記錄請求信息
+app.use((req, res, next) => {
+  console.log(`Received request: ${req.method} ${req.url}`);
+  next();
+});
+
 // 使用 morgan 輸出 HTTP 請求的詳細日誌
 const morgan = require('morgan');
 app.use(morgan('dev'));
