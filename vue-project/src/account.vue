@@ -134,7 +134,7 @@ this.category = '飲食';
       // 獲取本月花費統計
       async fetchMonthlyTotal() {
         try {
-          const response = await axios.get('/expenses/monthly');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/expenses/monthly');
           this.monthlyTotal = response.data.monthlyTotal;
         } catch (error) {
           console.error('獲取本月花費資料失敗', error);
@@ -144,7 +144,7 @@ this.category = '飲食';
       // 獲取本月花費清單
       async fetchMonthlyExpenses() {
         try {
-          const response = await axios.get('/expenses/monthly-list');
+          const response = await axios.get('https://bookkeeping-zcvf.onrender.com/expenses/monthly-list');
           if (response.data && response.data.expenses) {
             this.monthlyExpenses = response.data.expenses;
           } else {
