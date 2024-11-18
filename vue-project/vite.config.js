@@ -11,7 +11,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
+  }
+  /*
   server: {
     proxy: {
       '/expenses': {
@@ -20,5 +21,5 @@ export default defineConfig({
         secure: false, // 若後端是 HTTPS，但沒有有效的 SSL 憑證，可以加這行
       }
     }
-  }
+  }*/
 })
