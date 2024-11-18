@@ -110,7 +110,7 @@ this.category = '飲食';
       // 獲取今日花費統計
       async fetchDailyTotal() {
         try {
-          const response = await axios.get('https://bookkeeping-1.onrender.com/expenses/daily');
+          const response = await axios.get('/expenses/daily');
           this.dailyTotal = response.data.dailyTotal;
         } catch (error) {
           console.error('獲取今日花費資料失敗', error);

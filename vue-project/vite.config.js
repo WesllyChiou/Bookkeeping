@@ -11,15 +11,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
-  /*
+  },
   server: {
     proxy: {
       '/expenses': {
-        target: 'https://bookkeeping-1.onrender.com',
+        target: 'https://bookkeeping-zcvf.onrender.com',
         changeOrigin: true,
         secure: false, // 若後端是 HTTPS，但沒有有效的 SSL 憑證，可以加這行
       }
     }
-  }*/
+  }
 })
